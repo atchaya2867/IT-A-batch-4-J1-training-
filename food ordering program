@@ -1,0 +1,85 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Menu Card");
+        System.out.println("juice\nbiriyani\ndessert");
+        System.out.println("Enter item:");
+        String a = sc.nextLine().toLowerCase();
+        switch (a) {
+            case "juice":
+                System.out.println("Watermelon Juice - Rs.60");
+                System.out.println("Apple Juice - Rs.60");
+                System.out.println("Orange Juice - Rs.70");
+                System.out.println("Pomegranate Juice - Rs.90");
+                break;
+
+            case "biriyani":
+                System.out.println("Chicken Biriyani - Rs.220");
+                System.out.println("Mutton Biriyani - Rs.280");
+                System.out.println("Egg Biriyani - Rs.180");
+                System.out.println("Veg Biriyani - Rs.160");
+                break;
+
+            case "dessert":
+                System.out.println("Ice Cream - Rs.60");
+                System.out.println("Brownie - Rs.90");
+                System.out.println("Chocolate Cake - Rs.120");
+                System.out.println("Falooda - Rs.110");
+                break;
+
+            default:
+                System.out.println("Category not available");
+                return;
+        }
+
+        System.out.println("Place the order:");
+        String item = sc.nextLine().toLowerCase();
+        int price = 0;
+        switch (item) {
+            case "watermelon juice":
+            case "apple juice":
+            case "ice cream":
+                price = 60;
+                break;
+            case "orange juice":
+                price = 70;
+                break;
+            case "pomegranate juice":
+            case "brownie":
+                price = 90;
+                break;
+            case "falooda":
+                price = 110;
+                break;
+            case "chocolate cake":
+                price = 120;
+                break;
+            case "veg biriyani":
+                price = 160;
+                break;
+            case "egg biriyani":
+                price = 180;
+                break;
+            case "chicken biriyani":
+                price = 220;
+                break;
+            case "mutton biriyani":
+                price = 280;
+                break;
+            default:
+                System.out.println("Item not available");
+                return;
+        }
+        System.out.println("Enter quantity:");
+        int qty = sc.nextInt();
+        int bill = price * qty;
+        System.out.println("BILL");
+        System.out.println("Item     : " + item);
+        System.out.println("Price    : Rs." + price);
+        System.out.println("Quantity : " + qty);
+        System.out.println("Total    : Rs." + bill);
+
+        sc.close();
+    }
+}
