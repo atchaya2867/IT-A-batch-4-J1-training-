@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the no of liters to fill the tank");
+        int liters = sc.nextInt();
+        if (liters <= 0) {
+            System.out.println(liters + " is an Invalid Input");
+            return;
+        }
+        System.out.println("Enter the distance covered");
+        int distance = sc.nextInt();
+        if (distance <= 0) {
+            System.out.println(distance + " is an Invalid Input");
+            return;
+        }
+        double litersPer100Km = (liters * 100.0) / distance;
+        double milesPerGallon = (distance * 0.6214) / (liters * 0.2642);
+        System.out.println("Liters/100KM");
+        System.out.printf("%.2f\n", litersPer100Km);
+        System.out.println("Miles/gallons");
+        System.out.printf("%.2f\n", milesPerGallon);
+    }
+}
