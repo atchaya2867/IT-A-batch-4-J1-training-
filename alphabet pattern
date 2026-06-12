@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int a=sc.nextInt();
+	    int t=2*a-1;
+	    for(int row=0;row<a;row++){
+	        for(int col=a-1;col>=row;col--){
+	            System.out.print((char)('A' + col));
+	        }
+	        System.out.println( );
+	    }
+	}
+}
