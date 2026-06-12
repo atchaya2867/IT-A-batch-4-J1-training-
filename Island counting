@@ -1,0 +1,38 @@
+import java.util.*;
+public class Main {
+    static void dfs(int[][] arr, boolean[][] visited, int i, int j) {
+        if (i < 0 || j < 0 || i >= arr.length || j >= arr[0].length) {
+            return;
+        }
+        if (arr[i][j] == 0 || visited[i][j]) {
+            return;
+        }
+        visited[i][j] = true;
+        dfs(arr, visited, i - 1, j); 
+        dfs(arr, visited, i + 1, j); 
+        dfs(arr, visited, i, j - 1); 
+        dfs(arr, visited, i, j + 1); 
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        int[][] arr = new int[r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        boolean[][] visited = new boolean[r][c];
+        int count = 0;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (arr[i][j] == 1 && !visited[i][j]) {
+                    dfs(arr, visited, i, j);
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+    }
+}
