@@ -1,0 +1,14 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Set<Integer> a = new HashSet<>();
+	   a.add(12);
+	   a.add(10);
+	   a.add(5);
+	   a.add(12);
+	   a.add(23);
+	   System.out.println(a);
+	   System.out.println(a.size());
+	}
+}
