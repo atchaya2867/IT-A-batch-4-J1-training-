@@ -1,0 +1,14 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    ArrayList<String> a = new ArrayList<>();
+	    a.add("java");
+	    a.add("java script");
+	    a.add("python");
+	    a.set(0,"c++");
+	    a.contains("python");
+	    //a.contains("java");
+		System.out.println(a);
+	}
+}
