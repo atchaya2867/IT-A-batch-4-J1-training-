@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 2};
+        int[] arr2 = {2, 1, 2, 3};
+        HashMap<Integer, Integer> map1 = new HashMap<>();
+        HashMap<Integer, Integer> map2 = new HashMap<>();
+        for (int x : arr1)
+            map1.put(x, map1.getOrDefault(x, 0) + 1);
+        for (int x : arr2)
+            map2.put(x, map2.getOrDefault(x, 0) + 1);
+        if (map1.equals(map2))
+            System.out.println("Equal");
+        else
+            System.out.println("Not Equal");
+    }
+}
